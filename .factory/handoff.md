@@ -1,4 +1,27 @@
-# Handoff — polish round 4
+# Handoff — adversarial review 5
+
+## Review-5 result
+
+No product code was changed. The independent record is [review-5.md](review-5.md): **PASS**, with zero findings.
+
+- Fresh live Chromium contexts at 390 × 844 and 1440 × 900 confirmed first-read clarity, no overflow, and no application console error.
+- Live demo verified the ready sample, persistent banner, Reset, Start for real, demo-only storage, and same-origin requests.
+- A fresh clone at `/tmp/reading-comfort-pacer-review5.msmKfP` ran all 22 exact `.factory/claims.json` commands successfully.
+- `npm run check` passed: typecheck, lint, 18 unit tests, and release build.
+- `npm run test:e2e -- --workers=1` passed: 26 browser tests.
+- Live routes, metadata, focus-after-navigation, legal/footer consistency, 404, and every discovered link were checked. The live extension ZIP is valid and its extracted payloads match the clean local build.
+
+Run:
+
+```sh
+npm ci
+npm run check
+npm run test:e2e -- --workers=1
+```
+
+Known gaps: none identified in review 5.
+
+## Prior release handoff
 
 The release candidate is repaired and deployed. The implementation commit is `63484ce` (`fix: verify offline and motion accessibility`); the static work-order deployment is `311a2b9f-9756-427a-a6fd-47973e8b6423`.
 
