@@ -5,8 +5,9 @@ const heading = document.querySelector<HTMLElement>("h1");
 const announcement = document.querySelector<HTMLElement>(".route-announcement");
 const focusRoute = () => { if (heading) { heading.focus({ preventScroll: true }); if (announcement) announcement.textContent = `${document.title.replace(" — Reading Comfort Pacer", "")} page loaded`; } };
 const returningRoute = Boolean((history.state as { pacerRoute?: boolean } | null)?.pacerRoute);
+const arrivedFromProductRoute = returningRoute || Boolean(document.referrer && new URL(document.referrer).origin === location.origin);
 history.replaceState({ ...history.state, pacerRoute: true }, "", location.href);
-if (returningRoute || (document.referrer && new URL(document.referrer).origin === location.origin)) focusRoute();
+if (arrivedFromProductRoute) focusRoute();
 addEventListener("pageshow", (event) => { if ((event as PageTransitionEvent).persisted) focusRoute(); });
 if (location.pathname === "/" && new URLSearchParams(location.search).get("demo") === "1") location.replace("/demo/?demo=1");
 document.querySelectorAll<HTMLAnchorElement>("[data-download]").forEach((link) => link.addEventListener("click", () => link.setAttribute("data-pressed", "true")));
@@ -32,5 +33,5 @@ if (demoRoot) {
   document.querySelector<HTMLButtonElement>("[data-reset-demo]")?.addEventListener("click", () => { write(initial()); render(); });
   document.querySelector<HTMLAnchorElement>("[data-start-real]")?.addEventListener("click", () => localStorage.removeItem(demoKey));
   render();
-  demoRoot.querySelector<HTMLElement>("h1")?.focus({ preventScroll: true });
+  if (arrivedFromProductRoute) demoRoot.querySelector<HTMLElement>("h1")?.focus({ preventScroll: true });
 }

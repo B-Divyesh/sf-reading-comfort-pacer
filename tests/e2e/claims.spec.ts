@@ -80,6 +80,7 @@ test("@claim:accessible-demo works by keyboard and honors reduced motion", async
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/demo/?demo=1");
   await expect(page.getByRole("status")).toHaveText("Demo — sample data, nothing is saved");
+  await expect(page.locator("h1")).not.toBeFocused();
   await page.getByRole("button", { name: "Start distance break" }).focus();
   await page.keyboard.press("Enter");
   await expect(page.getByText("Distance break in progress")).toBeVisible();
