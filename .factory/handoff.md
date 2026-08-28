@@ -10,7 +10,7 @@ This repair resolves every `F-1-1` through `F-1-41` finding in `.factory/review-
 
 - Rewrote the first screen in plain language for screen workers with tired eyes.
 - Added the isolated one-click sample at `/demo/?demo=1` and root `?demo=1`, with a persistent banner, reset, start-real action, and `demo:pacer` storage namespace.
-- Added the claims registry, eleven individually runnable claim tests, copy audit, and demo documentation.
+- Added the claims registry, twelve individually runnable claim tests, copy audit, and demo documentation.
 - Added complete route metadata, a 1200 × 630 self-hosted social image, apple touch icon, shared navigation/footer, focus announcements, and a designed HTTP 404 route.
 - Corrected the final dark-demo banner contrast issue found during live verification.
 
@@ -24,7 +24,7 @@ npm run check       # pass: typecheck, lint, 17 unit tests, production build
 npm run test:e2e    # pass: 17 Playwright/axe/extension tests
 ```
 
-All eleven commands in `.factory/claims.json` also passed from that clean clone. `npm audit --audit-level=moderate` reported 0 vulnerabilities. The production build produced `dist/extension`, `dist/site`, and `dist/site/downloads/reading-comfort-pacer-chrome.zip`.
+All twelve commands in `.factory/claims.json` also passed from that clean clone. `npm audit --audit-level=moderate` reported 0 vulnerabilities. The production build produced `dist/extension`, `dist/site`, and `dist/site/downloads/reading-comfort-pacer-chrome.zip`.
 
 Post-deploy verification:
 
