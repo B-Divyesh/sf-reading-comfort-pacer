@@ -1,0 +1,11 @@
+{
+  "slug": "reading-comfort-pacer",
+  "title": "Reading Comfort Pacer",
+  "territory": "utilities",
+  "user": "Screen workers with eye fatigue who need reading breaks that occur at a natural stopping point instead of in the middle of a task.",
+  "smallest_useful_product": "Browser extension with an accessible timer that requests a break only after the next user-triggered reading boundary, then shows a calm full-screen distance target and optional vibration.",
+  "success_measure": "In 14 days, at least 60% of reminders are accepted or snoozed intentionally rather than dismissed, and users complete 10+ distance breaks.",
+  "artifact_class": "browser-extension",
+  "monetization": "free",
+  "constraints": "Make no medical claims; never access camera data; support reduced motion, screen readers, and a complete disable option."
+}
