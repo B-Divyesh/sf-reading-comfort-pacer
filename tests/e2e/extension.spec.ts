@@ -84,6 +84,21 @@ test("installed extension opens a boundary-confirmed distance break", async () =
     const disabledPopup = await context.newPage();
     await disabledPopup.goto(`chrome-extension://${extensionId}/popup.html`);
     await expect(disabledPopup.getByText("Pacer disabled")).toBeVisible();
+
+    await worker.evaluate(async () => chrome.storage.local.set({ pacerState: {
+      phase: "breaking",
+      nextDue: "soon",
+      breakStarted: false,
+      settings: { intervalMinutes: -1, breakSeconds: 0, vibration: "yes" },
+      stats: { completed: -3, snoozed: 1.5, accepted: "many" }
+    } }));
+    const recoveredPopup = await context.newPage();
+    await recoveredPopup.goto(`chrome-extension://${extensionId}/popup.html`);
+    await expect(recoveredPopup.getByText("Next boundary request")).toBeVisible();
+    await expect(recoveredPopup.getByText("0 breaks completed")).toBeVisible();
+    const recovered = await worker.evaluate(async () => (await chrome.storage.local.get("pacerState")).pacerState as PacerState);
+    expect(recovered.settings).toEqual({ intervalMinutes: 20, breakSeconds: 20, vibration: false });
+    expect(recovered.stats).toEqual({ completed: 0, snoozed: 0, accepted: 0 });
     expect(runtimeRequests.filter((url) => url.startsWith("http://") || url.startsWith("https://"))).toEqual([]);
   } finally {
     await context.close();
