@@ -68,3 +68,10 @@ test("landing page remains readable and axe-clean in dark mode", async ({ page }
   const results = await new AxeBuilder({ page: page as never }).analyze();
   expect(results.violations.filter((violation) => ["serious", "critical"].includes(violation.impact ?? ""))).toEqual([]);
 });
+
+test("demo remains axe-clean in dark mode", async ({ page }) => {
+  await page.emulateMedia({ colorScheme: "dark" });
+  await page.goto("/demo/?demo=1");
+  const results = await new AxeBuilder({ page: page as never }).analyze();
+  expect(results.violations.filter((violation) => ["serious", "critical"].includes(violation.impact ?? ""))).toEqual([]);
+});
