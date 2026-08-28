@@ -18,6 +18,7 @@ Open <https://reading-comfort-pacer.sociobot.in/demo/?demo=1>. The sample starts
 - Lets you snooze a ready reminder for ten minutes.
 - Lets you turn reminders off while keeping settings.
 - Keeps your settings and break totals in your browser.
+- Works offline after you install it.
 
 This is a general ergonomic utility. It is not medical advice or treatment.
 

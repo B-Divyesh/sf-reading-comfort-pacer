@@ -7,6 +7,10 @@
 | Take screen breaks after a stopping point. | 7 | Pass |
 | For screen workers with tired eyes, it waits until you finish a paragraph or task before a distance break. | 18 | Pass |
 | Opens a temporary ready reminder. Nothing is saved. | 8 | Pass |
+| Free | 1 | Pass |
+| No account or page access | 5 | Pass |
+| Works offline after install | 4 | Pass |
+| Manual install | 2 | Pass |
 
 No sentence on the landing page exceeds 22 words. The landing copy contains none of the banned marketing words.
 
@@ -31,6 +35,7 @@ No sentence on the landing page exceeds 22 words. The landing copy contains none
 | Controls have names, visible focus, and follow your device’s motion setting. | 11 | Pass |
 | Download this build. | 3 | Pass |
 | The archive contains the folder you load in Chrome. | 9 | Pass |
+| Works offline after you install it. | 6 | Pass |
 | Reading Comfort Pacer helps screen workers take a distance break after a stopping point. | 14 | Pass |
 
 ## Terminology

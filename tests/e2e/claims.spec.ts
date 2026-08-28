@@ -30,6 +30,8 @@ test("@claim:boundary-wait sample waits for confirmation", async ({ page }) => {
 test("@claim:no-account sample and download do not contain a gate", async ({ page }) => {
   await page.goto("/");
   await expect(page.getByRole("link", { name: "Try it with sample data" })).toBeVisible();
+  await expect(page.locator(".plain-facts")).toContainText("Free");
+  await expect(page.locator(".plain-facts")).toContainText("No account or page access");
   await expect(page.locator("input[type=password], input[name*=email i], [data-payment]")).toHaveCount(0);
   await page.goto("/demo/?demo=1");
   await expect(page.locator("input, form, [data-payment]")).toHaveCount(0);

@@ -55,6 +55,7 @@ button, a, select, input { -webkit-tap-highlight-color: transparent; }
   transform: translateY(-150%);
 }
 .skip-link:focus { transform: translateY(0); }
+.skip-link:focus-visible { outline-color: #fff; }
 
 .eyebrow {
   margin: 0 0 8px;
@@ -90,6 +91,7 @@ p { font-size: 16px; line-height: 1.5; }
 .button:active { transform: translateY(1px); }
 .button-primary { background: var(--route); color: #fff; box-shadow: 3px 3px 0 var(--route-dark); }
 .button-primary:hover { background: var(--route-dark); }
+.button-primary:focus-visible { outline-color: #fff; }
 .button-secondary { border-color: var(--ink); color: var(--ink); background: var(--raised); }
 .button-quiet { color: var(--ink); background: transparent; border-color: var(--contour); }
 .button:disabled { opacity: .55; cursor: not-allowed; transform: none; }
@@ -130,6 +132,7 @@ p { font-size: 16px; line-height: 1.5; }
   }
   .button-primary { color: #21110e; box-shadow: 3px 3px 0 #9f493b; }
   .button-primary:hover { background: #ff9a89; }
+  .button-primary:focus-visible { outline-color: #101815; }
 }
 
 @media (prefers-reduced-motion: reduce) {
