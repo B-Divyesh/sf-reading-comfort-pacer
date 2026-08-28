@@ -1,7 +1,7 @@
 import { createWriteStream } from "node:fs";
 import { mkdir, stat } from "node:fs/promises";
 import { resolve } from "node:path";
-import archiver from "archiver";
+import { ZipArchive } from "archiver";
 
 const extensionDir = resolve(process.cwd(), "dist/extension/chrome-mv3");
 const downloadDir = resolve(process.cwd(), "dist/site/downloads");
@@ -12,7 +12,7 @@ await mkdir(downloadDir, { recursive: true });
 
 await new Promise((resolveArchive, reject) => {
   const output = createWriteStream(outputPath);
-  const archive = archiver("zip", { zlib: { level: 9 } });
+  const archive = new ZipArchive({ zlib: { level: 9 } });
   output.on("close", resolveArchive);
   output.on("error", reject);
   archive.on("error", reject);

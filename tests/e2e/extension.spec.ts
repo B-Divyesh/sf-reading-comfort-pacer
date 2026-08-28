@@ -3,6 +3,7 @@ import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import { chromium, expect, test } from "@playwright/test";
 import AxeBuilder from "@axe-core/playwright";
+import type { PacerState } from "../../lib/pacer";
 
 test("installed extension opens a boundary-confirmed distance break", async () => {
   test.setTimeout(60_000);
@@ -26,7 +27,7 @@ test("installed extension opens a boundary-confirmed distance break", async () =
     expect(accessibility.violations.filter((item) => ["serious", "critical"].includes(item.impact ?? ""))).toEqual([]);
 
     await worker.evaluate(async () => {
-      const stored = (await chrome.storage.local.get("pacerState")).pacerState;
+      const stored = (await chrome.storage.local.get("pacerState")).pacerState as PacerState;
       await chrome.storage.local.set({ pacerState: { ...stored, phase: "ready", nextDue: null } });
     });
     await popup.reload();
@@ -42,7 +43,7 @@ test("installed extension opens a boundary-confirmed distance break", async () =
     await distancePage.getByRole("button", { name: "Finish break" }).click();
     await expect(distancePage.getByRole("heading", { level: 1, name: "Route refreshed" })).toBeVisible();
 
-    const stored = await worker.evaluate(async () => (await chrome.storage.local.get("pacerState")).pacerState);
+    const stored = await worker.evaluate(async () => (await chrome.storage.local.get("pacerState")).pacerState as PacerState);
     expect(stored.stats.completed).toBe(1);
     expect(stored.phase).toBe("running");
 

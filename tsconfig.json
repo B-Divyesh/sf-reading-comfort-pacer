@@ -2,8 +2,9 @@
   "extends": "./.wxt/tsconfig.json",
   "compilerOptions": {
     "strict": true,
+    "types": ["chrome", "node"],
     "noUncheckedIndexedAccess": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["entrypoints", "lib", "tests", ".wxt/types/**/*.d.ts", "wxt.config.ts", "vite.site.config.ts"]
+  "include": ["entrypoints", "lib", "tests", "types", ".wxt/types/**/*.d.ts", "wxt.config.ts", "vite.site.config.ts"]
 }
