@@ -1,0 +1,14 @@
+[
+  {"id":"demo-isolation","claim":"The sample uses isolated temporary storage and leaves real website data unchanged.","where":"Demo banner and README","test":"npm run test:e2e -- --grep @claim:demo-isolation","sandbox":"fresh browser context; seed a real-data sentinel; complete, reset, and exit /demo/?demo=1"},
+  {"id":"boundary-wait","claim":"A ready reminder waits for a stopping-point confirmation before the sample distance break opens.","where":"Landing, demo, README","test":"npm run test:e2e -- --grep @claim:boundary-wait","sandbox":"fresh /demo/?demo=1 state"},
+  {"id":"no-account","claim":"Trying the sample and downloading the extension do not show an account or payment gate.","where":"Landing","test":"npm run test:e2e -- --grep @claim:no-account","sandbox":"fresh landing and demo routes"},
+  {"id":"privacy-permissions","claim":"The extension has only storage and alarms permissions and the demo makes no third-party request.","where":"Landing, privacy page, README","test":"npm run test:e2e -- --grep @claim:privacy-permissions","sandbox":"built manifest and fresh /demo/?demo=1 browser context"},
+  {"id":"download-build","claim":"The download link returns the packaged MV3 extension archive.","where":"Landing, README","test":"npm run test:e2e -- --grep @claim:download-build","sandbox":"fresh built static site"},
+  {"id":"site-routes","claim":"Product routes include a designed same-origin not-found page.","where":"README","test":"npm run test:e2e -- --grep @claim:site-routes","sandbox":"fresh built static site, including unknown route"},
+  {"id":"accessible-demo","claim":"The sample supports keyboard focus and reduced motion.","where":"Landing","test":"npm run test:e2e -- --grep @claim:accessible-demo","sandbox":"fresh /demo/?demo=1 with reduced-motion emulation"}
+  ,{"id":"interval-options","claim":"The extension supports 10, 20, 30, 45, and 60-minute intervals with 20, 30, or 60-second breaks.","where":"Landing, README","test":"npm test -- -t @claim:interval-options","sandbox":"clean state-machine settings fixture"}
+  ,{"id":"snooze-disable","claim":"A ready reminder can snooze for ten minutes, and disabling reminders keeps settings.","where":"README","test":"npm test -- -t @claim:snooze-disable","sandbox":"clean state-machine fixture"}
+  ,{"id":"break-duration","claim":"Completing a distance break schedules the selected next interval.","where":"README","test":"npm test -- -t @claim:break-duration","sandbox":"clean state-machine fixture"}
+  ,{"id":"security-headers","claim":"The deployed site configuration uses restrictive same-origin security headers.","where":"README","test":"npm test -- -t @claim:security-headers","sandbox":"static configuration fixture"}
+  ,{"id":"asset-license","claim":"The site self-hosts its named font and records original-art provenance.","where":"README","test":"npm test -- -t @claim:asset-license","sandbox":"repository provenance fixture"}
+]

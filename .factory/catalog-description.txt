@@ -1,0 +1,1 @@
+Take screen breaks after a stopping point with a private Chromium extension for screen workers.

@@ -23,6 +23,7 @@ Transitions last 180–240ms and use opacity plus small transforms: a marker set
 ## Original asset plan and provenance
 
 - `assets/src/distant-ridge.png` and optimized site variants: an original editorial topographic landscape used to explain the move from near screen focus to a distant view. Generated with the factory Azure OpenAI image deployment (`factory-image`) on 2026-08-28. The generated asset is decorative and disclosed as AI-generated in the footer.
+- `site/public/og-card.jpg`: a 1200 × 630 crop derived from that original ridge asset for social previews; no external image service is used.
 - Hand-authored contour SVG/CSS motifs and marker icons are original to this repository and MIT licensed with the product.
 
 ### Prompt sheet
