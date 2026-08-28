@@ -1,49 +1,26 @@
-# Reading Comfort Pacer — polish round 1 handoff
+# Reading Comfort Pacer — adversarial review 2 handoff
 
-## Released repair
+## Outcome
 
-Deployed commit `d53a8939947617e50ceb751d2316a13f2fa7569e` to <https://reading-comfort-pacer.sociobot.in>.
+Review 2 is complete at candidate `32f2eeadc9c685dd73b82c65b17815dc9ed4bbea`. The verdict is **FAIL**. No product code was changed. The full evidence, copy inventory, recurring finding audit, and fixes are in [`.factory/review-2.md`](review-2.md).
 
-This repair resolves every `F-1-1` through `F-1-41` finding in `.factory/review-1.md`. The complete finding-to-change-to-evidence map is in [`.factory/polish-1.md`](polish-1.md).
+The cold first screen and one-click demo pass. The failure is driven by unlisted or under-tested public claims, incomplete route-specific social metadata, sub-44 px controls, and remaining copy issues.
 
-## What changed
+## Verification performed
 
-- Rewrote the first screen in plain language for screen workers with tired eyes.
-- Added the isolated one-click sample at `/demo/?demo=1` and root `?demo=1`, with a persistent banner, reset, start-real action, and `demo:pacer` storage namespace.
-- Added the claims registry, twelve individually runnable claim tests, copy audit, and demo documentation.
-- Added complete route metadata, a 1200 × 630 self-hosted social image, apple touch icon, shared navigation/footer, focus announcements, and a designed HTTP 404 route.
-- Corrected the final dark-demo banner contrast issue found during live verification.
-
-## Exact verification evidence
-
-Clean clone at `/tmp/reading-comfort-pacer-clean.qi0oER`:
+From clean clone `/tmp/reading-comfort-pacer-review2.AlCnkh`:
 
 ```sh
 npm ci
-npm run check       # pass: typecheck, lint, 17 unit tests, production build
-npm run test:e2e    # pass: 17 Playwright/axe/extension tests
+# Every command in .factory/claims.json, run individually: 12/12 passed
+npm run check       # passed: typecheck, lint, 17/17 unit tests, build
+npm run test:e2e    # passed: 17/17 browser tests
 ```
 
-All twelve commands in `.factory/claims.json` also passed from that clean clone. `npm audit --audit-level=moderate` reported 0 vulnerabilities. The production build produced `dist/extension`, `dist/site`, and `dist/site/downloads/reading-comfort-pacer-chrome.zip`.
+Live checks covered cold home at 390 × 844 and 1440 × 900, the full demo flow with storage sentinels, home/demo/privacy/terms/unknown routes in light and dark, axe, link crawling, route focus/back behavior, 200% text, reduced motion, response headers, network interception, and the downloadable ZIP.
 
-Post-deploy verification:
+## Known gaps / next steps
 
-- `/opt/fleet/lib/verify-url.sh https://reading-comfort-pacer.sociobot.in .factory/evidence/polish-1` passed; `verify.json` records title, `lang=en`, one h1, main, complete image alternatives, and zero console/page errors.
-- Cold live Chromium checks covered home, demo, privacy, terms, and an unknown route in light and dark at 390px. All had zero serious/critical axe findings, zero horizontal overflow, and zero third-party requests.
-- `https://reading-comfort-pacer.sociobot.in/not-a-real-route` returned HTTP 404 with the product 404 page.
-- Live demo isolation was exercised with a seeded real `pacerState` sentinel. Completing and resetting the sample left it unchanged and stored the ready sample only in `demo:pacer`.
-- Screenshots and headers are in `.factory/evidence/polish-1/`.
+Resolve all findings in review 2 before requesting another review. Recurring issues retain their `F-1-*` IDs; new issues use `F-2-*`. Highest priority is complete claim registration and observable tests for browser support, alarms, motion pause, storage schema, accessibility, site privacy, cache policy, release outputs/version, asset self-hosting, deletion, and real unknown-route behavior. Then fix metadata, target sizes, demo action wording, storage/motion terminology, and the ambiguous “Free to try” fact.
 
-## Run and deploy
-
-```sh
-npm ci
-npm run check
-npm run test:e2e
-npm run build
-/opt/fleet/lib/deploy-static.sh reading-comfort-pacer dist/site
-```
-
-## Known gaps
-
-None. This is a static distribution site plus MV3 extension; no backend, payment, or external account flow is in scope.
+No deployment, infrastructure, DNS, billing, or product-code mutation was performed in this review.
