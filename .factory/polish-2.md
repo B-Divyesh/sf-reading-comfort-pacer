@@ -38,4 +38,4 @@ Candidate repaired from `32f2eeadc9c685dd73b82c65b17815dc9ed4bbea` using both ad
 - Every command in `.factory/claims.json` passed individually after `npm ci` in clean clone `/tmp/reading-comfort-pacer-clean.bAtSFW`.
 - `npm run check` passed typecheck, lint, 18 unit tests, and production build.
 - `npm run test:e2e -- --workers=1` passed 25 browser tests including axe, extension, routes, metadata, privacy, and mobile coverage.
-- Live evidence is added to `.factory/evidence/polish-2/` after deployment.
+- Deployed live evidence passed: `.factory/evidence/polish-2/verify.json`, `live-home-mobile.png`, `live-demo-mobile.png`, and `unknown-headers.txt`.

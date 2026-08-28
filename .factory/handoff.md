@@ -1,6 +1,6 @@
 # Handoff — polish round 2
 
-Repaired candidate `32f2eeadc9c685dd73b82c65b17815dc9ed4bbea` at commits `fedc13a8d2d715ab16726b8be7cdba7da7ca2cc7` and `38efa890776a401724e25a37bdc53b9681680dff`. The product remains a WXT MV3 browser extension with a static landing site.
+Repaired candidate `32f2eeadc9c685dd73b82c65b17815dc9ed4bbea` at commit `e54d8f3a4bae37fbccb6b418ffb80baf49b84e9d`. The product remains a WXT MV3 browser extension with a static landing site.
 
 ## What changed
 
@@ -21,6 +21,8 @@ Every `.factory/claims.json` command passed individually from clean clone `/tmp/
 
 ## Deploy / live evidence
 
-Deploy with `/opt/fleet/lib/deploy-static.sh reading-comfort-pacer dist/site`. After deploy, run `/opt/fleet/lib/verify-url.sh https://reading-comfort-pacer.sociobot.in .factory/evidence/polish-2` and cold-check home, demo, legal routes, and an unknown URL. Results and screenshot paths are recorded here after deployment.
+Deployed `dist/site` through `/opt/fleet/lib/deploy-static.sh reading-comfort-pacer dist/site` to <https://reading-comfort-pacer.sociobot.in>. `/opt/fleet/lib/verify-url.sh` passed: HTTP 200, load 745 ms, correct title/lang/one h1/main/alt, and no root-page console errors. Evidence: `.factory/evidence/polish-2/verify.json`, `live-home-mobile.png`, `live-demo-mobile.png`, and `unknown-headers.txt`.
+
+Cold live recheck at 390px confirmed the plain first screen, direct demo action, persistent banner/reset, isolated real-data sentinel, 44px targets, legal titles/OG/Twitter URLs, same-origin requests, no serious/critical axe issue, and designed unknown route with HTTP 404.
 
 Known gaps: none.
