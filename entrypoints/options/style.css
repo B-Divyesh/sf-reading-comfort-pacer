@@ -1,0 +1,29 @@
+.page-header { padding: 20px max(24px, env(safe-area-inset-left)); border-bottom: 1px solid var(--contour); }
+.brand { display: inline-flex; min-height: 44px; align-items: center; gap: 12px; color: var(--ink); font-weight: 750; text-decoration: none; }
+.settings-shell { width: min(100% - 40px, 720px); margin: 64px auto 96px; }
+.settings-shell h1 { margin-bottom: 16px; }
+.lede { max-width: 58ch; margin-bottom: 48px; color: var(--muted); font-size: 20px; }
+form { display: grid; gap: 36px; }
+fieldset { min-width: 0; margin: 0; padding: 0 0 36px; border: 0; border-bottom: 1px solid var(--contour); }
+legend { margin-bottom: 8px; padding: 0; font-size: 20px; font-weight: 750; }
+.field-help { color: var(--muted); }
+.choice-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.choice-grid label { position: relative; }
+.choice-grid input { position: absolute; opacity: 0; }
+.choice-grid span { display: grid; min-height: 48px; place-items: center; border: 1px solid var(--contour); background: var(--raised); cursor: pointer; }
+.choice-grid input:checked + span { border: 2px solid var(--route); color: var(--route-dark); font-weight: 750; }
+.choice-grid input:focus-visible + span { outline: 3px solid var(--focus); outline-offset: 3px; }
+.select-label { display: block; margin-bottom: 8px; font-weight: 700; }
+select { min-width: 220px; min-height: 48px; margin-bottom: 24px; padding: 8px 36px 8px 12px; border: 1px solid var(--contour); border-radius: 3px; color: var(--ink); background: var(--raised); }
+.check-row { display: flex; min-height: 52px; align-items: flex-start; gap: 12px; cursor: pointer; }
+.check-row input { width: 24px; height: 24px; margin: 2px 0 0; accent-color: var(--route); }
+.check-row span { display: grid; gap: 2px; }
+.check-row small { color: var(--muted); font-size: 14px; }
+.form-actions { display: flex; align-items: center; gap: 16px; }
+.privacy-note { margin-top: 56px; padding: 28px; border-left: 4px double var(--forest); background: var(--raised); box-shadow: var(--shadow); }
+.danger-zone { margin-top: 40px; }
+@media (max-width: 560px) {
+  .settings-shell { width: min(100% - 32px, 720px); margin-top: 40px; }
+  .choice-grid { grid-template-columns: repeat(2, 1fr); }
+  .form-actions { align-items: flex-start; flex-direction: column; }
+}

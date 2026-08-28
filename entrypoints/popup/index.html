@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reading Comfort Pacer</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to pacer</a>
+    <main id="main" class="popup-shell">
+      <header class="popup-header">
+        <span class="topo-mark" aria-hidden="true"></span>
+        <button id="open-settings" class="icon-link" type="button" aria-label="Open pacer settings">Field notes</button>
+      </header>
+      <p class="eyebrow">Attention route · local</p>
+      <h1>Reading comfort pacer</h1>
+      <section id="loading" class="loading" aria-live="polite">
+        <span class="contour-loader" aria-hidden="true"></span>
+        Reading your route…
+      </section>
+      <section id="pacer" hidden aria-live="polite">
+        <div class="route-readout">
+          <p id="state-label" class="route-label"></p>
+          <p id="time" class="route-time mono"></p>
+          <p id="state-help" class="status-line"></p>
+        </div>
+        <div id="actions" class="actions"></div>
+        <div class="route-meta">
+          <span><strong id="completed" class="mono">0</strong> breaks completed</span>
+          <span id="shortcut">Alt + Shift + B at a ready boundary</span>
+        </div>
+      </section>
+      <section id="error" class="error-state" hidden role="alert">
+        <h2>The route could not load</h2>
+        <p id="error-message">Reload the extension to try again.</p>
+        <button id="retry" class="button button-secondary" type="button">Try again</button>
+      </section>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distance break — Reading Comfort Pacer</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to distance cue</a>
+    <main id="main" class="break-shell">
+      <div class="coordinates mono" aria-hidden="true">DISTANCE VIEW · 00° / ∞</div>
+      <div class="horizon" aria-hidden="true">
+        <span class="ridge ridge-back"></span>
+        <span class="ridge ridge-front"></span>
+        <span class="distance-marker"></span>
+      </div>
+      <section class="break-copy">
+        <p class="eyebrow">Boundary reached</p>
+        <h1 id="break-title">Let your focus travel</h1>
+        <p id="instruction" class="instruction">Look beyond your screen toward the farthest comfortable object you can see. Let your eyes rest there.</p>
+        <p id="countdown" class="countdown mono" role="timer" aria-live="off">00:20</p>
+        <div class="break-actions">
+          <button id="finish" class="button button-primary" type="button">Finish break</button>
+          <button id="motion" class="button button-quiet" type="button" aria-pressed="false">Pause gentle motion</button>
+        </div>
+        <p id="status" class="status-line" role="status" aria-live="polite"></p>
+      </section>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

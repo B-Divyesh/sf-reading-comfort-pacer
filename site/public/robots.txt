@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://reading-comfort-pacer.sociobot.in/sitemap.xml

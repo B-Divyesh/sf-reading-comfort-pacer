@@ -1,0 +1,133 @@
+@import "@fontsource-variable/atkinson-hyperlegible-next";
+
+:root {
+  color-scheme: light dark;
+  --paper: #f4f0e6;
+  --raised: #fffdf7;
+  --ink: #18241f;
+  --muted: #526058;
+  --contour: #aeb9ab;
+  --route: #b33a2e;
+  --route-dark: #84271f;
+  --forest: #1e5b49;
+  --warning: #7a4b0b;
+  --focus: #126bcb;
+  --shadow: 0 12px 28px rgb(24 36 31 / 0.12);
+  font-family: "Atkinson Hyperlegible Next Variable", "Atkinson Hyperlegible Next", system-ui, sans-serif;
+  font-synthesis: none;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+* { box-sizing: border-box; }
+
+html { min-width: 320px; }
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='160' viewBox='0 0 240 160'%3E%3Cg fill='none' stroke='%2392a092' stroke-opacity='.18'%3E%3Cpath d='M-20 44C17 10 49 19 80 45s53 24 82 0 61-17 98 8'/%3E%3Cpath d='M-20 58C20 26 50 34 78 57s56 23 86-1 62-15 96 10'/%3E%3Cpath d='M-20 75C20 43 53 49 80 72s53 21 85-1 62-13 95 13'/%3E%3Cpath d='M-20 94c39-30 72-25 99-3s54 21 86 0 64-11 95 15'/%3E%3C/g%3E%3C/svg%3E");
+  color: var(--ink);
+}
+
+button, select, input { font: inherit; }
+
+button, a, select, input { -webkit-tap-highlight-color: transparent; }
+
+:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: fixed;
+  z-index: 100;
+  left: 12px;
+  top: 8px;
+  padding: 8px 12px;
+  color: white;
+  background: #174f91;
+  transform: translateY(-150%);
+}
+.skip-link:focus { transform: translateY(0); }
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--route-dark);
+  font-family: ui-monospace, "SFMono-Regular", Consolas, monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+h1, h2, p { margin-top: 0; }
+h1 { font-size: clamp(28px, 8vw, 40px); line-height: 1.02; letter-spacing: -.025em; }
+h2 { font-size: 20px; line-height: 1.2; }
+p { font-size: 16px; line-height: 1.5; }
+
+.button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  padding: 11px 16px;
+  font-weight: 720;
+  line-height: 1.15;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+.button:hover { transform: translateY(-1px); }
+.button:active { transform: translateY(1px); }
+.button-primary { background: var(--route); color: #fff; box-shadow: 3px 3px 0 var(--route-dark); }
+.button-primary:hover { background: var(--route-dark); }
+.button-secondary { border-color: var(--ink); color: var(--ink); background: var(--raised); }
+.button-quiet { color: var(--ink); background: transparent; border-color: var(--contour); }
+.button:disabled { opacity: .55; cursor: not-allowed; transform: none; }
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+}
+
+.topo-mark {
+  display: inline-grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid var(--contour);
+  border-radius: 50% 50% 50% 8%;
+  color: var(--route);
+  transform: rotate(-45deg);
+}
+.topo-mark::after { content: "•"; font-size: 26px; transform: rotate(45deg); }
+
+.status-line { color: var(--muted); }
+.mono { font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; font-variant-numeric: tabular-nums; }
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #101815;
+    --raised: #18231e;
+    --ink: #f5f0e5;
+    --muted: #b8c4bc;
+    --contour: #617469;
+    --route: #f07b68;
+    --route-dark: #ff9a89;
+    --forest: #78c7ad;
+    --warning: #efb85c;
+    --focus: #75b8ff;
+    --shadow: 0 12px 28px rgb(0 0 0 / .3);
+  }
+  .button-primary { color: #21110e; box-shadow: 3px 3px 0 #9f493b; }
+  .button-primary:hover { background: #ff9a89; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

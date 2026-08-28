@@ -1,0 +1,14 @@
+html, body { width: 376px; min-height: 520px; }
+.popup-shell { padding: 20px 20px 24px; }
+.popup-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+.icon-link { min-height: 44px; border: 0; border-bottom: 1px solid var(--contour); color: var(--muted); background: transparent; cursor: pointer; }
+h1 { max-width: 10ch; margin-bottom: 28px; }
+.route-readout { min-height: 174px; padding: 20px 0 12px; border-top: 1px solid var(--contour); border-bottom: 1px solid var(--contour); }
+.route-label { margin-bottom: 5px; color: var(--muted); font-size: 14px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; }
+.route-time { margin-bottom: 10px; font-size: 44px; line-height: 1; letter-spacing: -.05em; }
+.status-line { margin-bottom: 0; }
+.actions { display: grid; gap: 12px; margin-top: 20px; }
+.route-meta { display: grid; gap: 4px; margin-top: 24px; color: var(--muted); font-size: 13px; }
+.loading, .error-state { padding: 24px 0; }
+.contour-loader { display: inline-block; width: 28px; height: 28px; margin-right: 10px; border: 4px double var(--forest); border-radius: 48% 52% 43% 57%; vertical-align: middle; animation: settle 1.8s ease-in-out infinite alternate; }
+@keyframes settle { to { transform: scale(.82) rotate(12deg); } }

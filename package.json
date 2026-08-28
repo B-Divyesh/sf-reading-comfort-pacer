@@ -1,0 +1,33 @@
+{
+  "name": "reading-comfort-pacer",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "dev:site": "vite --config vite.site.config.ts",
+    "build:extension": "wxt build",
+    "build:site": "vite build --config vite.site.config.ts",
+    "package:extension": "node scripts/package-extension.mjs",
+    "build": "npm run clean && npm run build:extension && npm run build:site && npm run package:extension",
+    "clean": "node scripts/clean.mjs",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "check": "tsc --noEmit && npm test && npm run build"
+  },
+  "dependencies": {
+    "@fontsource-variable/atkinson-hyperlegible-next": "5.3.0"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.10.2",
+    "@playwright/test": "1.58.2",
+    "@types/chrome": "0.0.287",
+    "archiver": "7.0.1",
+    "playwright": "1.58.2",
+    "sharp": "0.33.5",
+    "typescript": "5.7.3",
+    "vite": "6.1.0",
+    "vitest": "3.0.5",
+    "wxt": "0.20.6"
+  }
+}

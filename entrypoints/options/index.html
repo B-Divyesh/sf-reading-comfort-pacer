@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings — Reading Comfort Pacer</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to settings</a>
+    <header class="page-header">
+      <a class="brand" href="https://reading-comfort-pacer.sociobot.in" target="_blank" rel="noreferrer"><span class="topo-mark" aria-hidden="true"></span> Reading Comfort Pacer</a>
+    </header>
+    <main id="main" class="settings-shell">
+      <p class="eyebrow">Field notes · stored on this device</p>
+      <h1>Choose your route</h1>
+      <p class="lede">Set a gentle estimate. When time is up, the pacer waits for you to finish the thought.</p>
+      <form id="settings-form">
+        <fieldset>
+          <legend>Reading interval</legend>
+          <p class="field-help">How long before the next boundary request?</p>
+          <div class="choice-grid">
+            <label><input type="radio" name="interval" value="10" /> <span>10 min</span></label>
+            <label><input type="radio" name="interval" value="20" /> <span>20 min</span></label>
+            <label><input type="radio" name="interval" value="30" /> <span>30 min</span></label>
+            <label><input type="radio" name="interval" value="45" /> <span>45 min</span></label>
+            <label><input type="radio" name="interval" value="60" /> <span>60 min</span></label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Distance break</legend>
+          <label class="select-label" for="break-seconds">Break length</label>
+          <select id="break-seconds" name="breakSeconds">
+            <option value="20">20 seconds</option>
+            <option value="30">30 seconds</option>
+            <option value="60">1 minute</option>
+          </select>
+          <label class="check-row">
+            <input id="vibration" type="checkbox" name="vibration" />
+            <span><strong>Use a gentle vibration</strong><small>Only on devices and browsers that support it.</small></span>
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Pacer status</legend>
+          <label class="check-row">
+            <input id="enabled" type="checkbox" name="enabled" />
+            <span><strong>Enable boundary requests</strong><small>Turn this off to stop every scheduled reminder.</small></span>
+          </label>
+        </fieldset>
+        <div class="form-actions">
+          <button class="button button-primary" type="submit">Save settings</button>
+          <span id="save-status" class="status-line" role="status" aria-live="polite"></span>
+        </div>
+      </form>
+      <aside class="privacy-note">
+        <h2>Your route stays yours</h2>
+        <p>No account, camera, page history, analytics, or health profile. Settings and counts remain in this browser’s extension storage.</p>
+      </aside>
+      <section class="danger-zone" aria-labelledby="reset-heading">
+        <h2 id="reset-heading">Local progress</h2>
+        <p><strong id="completed">0</strong> distance breaks completed on this device.</p>
+      </section>
+      <div id="load-error" class="error-state" hidden role="alert">
+        <h2>Settings could not load</h2>
+        <p>Reload this page to try again. Your existing settings have not been changed.</p>
+      </div>
+    </main>
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>

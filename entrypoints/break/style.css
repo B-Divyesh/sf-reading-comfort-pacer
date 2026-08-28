@@ -1,0 +1,31 @@
+html, body { min-height: 100%; }
+body { overflow: hidden; }
+.break-shell { position: relative; display: grid; min-height: 100vh; min-height: 100dvh; align-items: end; padding: max(24px, env(safe-area-inset-top)) max(24px, env(safe-area-inset-right)) max(32px, env(safe-area-inset-bottom)) max(24px, env(safe-area-inset-left)); isolation: isolate; }
+.coordinates { position: absolute; z-index: 2; top: max(24px, env(safe-area-inset-top)); right: max(24px, env(safe-area-inset-right)); color: var(--muted); font-size: 12px; letter-spacing: .1em; }
+.break-copy { position: relative; z-index: 3; width: min(620px, 100%); padding: clamp(24px, 5vw, 52px); background: color-mix(in srgb, var(--raised) 94%, transparent); box-shadow: var(--shadow); }
+.break-copy h1 { max-width: 10ch; margin-bottom: 20px; font-size: clamp(38px, 7vw, 72px); }
+.instruction { max-width: 48ch; color: var(--muted); font-size: clamp(18px, 2vw, 22px); }
+.countdown { margin: 28px 0; font-size: clamp(32px, 5vw, 56px); }
+.break-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.status-line { margin: 16px 0 0; }
+.horizon { position: absolute; z-index: -1; inset: 0; overflow: hidden; background: linear-gradient(to bottom, transparent 0 48%, color-mix(in srgb, var(--forest) 8%, transparent) 48%); }
+.ridge { position: absolute; right: -5%; bottom: -10%; left: -5%; height: 61%; background: var(--contour); clip-path: polygon(0 72%, 10% 62%, 20% 67%, 32% 47%, 43% 59%, 57% 28%, 67% 54%, 77% 42%, 88% 61%, 100% 50%, 100% 100%, 0 100%); opacity: .24; }
+.ridge-front { bottom: -21%; height: 59%; background: var(--forest); opacity: .2; transform: scale(1.04); animation: breathe 8s ease-in-out infinite alternate; }
+.distance-marker { position: absolute; right: 24%; top: 43%; width: 22px; height: 22px; border: 3px solid var(--route); border-radius: 50%; box-shadow: 0 0 0 12px color-mix(in srgb, var(--route) 14%, transparent), 0 0 0 24px color-mix(in srgb, var(--route) 7%, transparent); animation: marker-breathe 4s ease-in-out infinite alternate; }
+.distance-marker::after { content: ""; position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; border-radius: 50%; background: var(--route); transform: translate(-50%, -50%); }
+.motion-paused .ridge-front, .motion-paused .distance-marker { animation-play-state: paused; }
+.is-complete .distance-marker { animation: none; background: var(--forest); border-color: var(--forest); }
+@keyframes breathe { to { transform: scale(1.015) translateY(-1.5%); } }
+@keyframes marker-breathe { to { box-shadow: 0 0 0 18px color-mix(in srgb, var(--route) 10%, transparent), 0 0 0 34px transparent; } }
+@media (max-width: 600px) {
+  .break-shell { align-items: end; padding-inline: 16px; }
+  .break-copy { padding: 24px 20px; }
+  .horizon { background: none; }
+  .distance-marker { top: 22%; right: 23%; }
+  .ridge { bottom: 30%; height: 38%; }
+  .ridge-front { bottom: 24%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ridge-front, .distance-marker { animation: none; }
+  #motion { display: none; }
+}
