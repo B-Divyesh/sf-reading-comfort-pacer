@@ -1,0 +1,107 @@
+[
+  {
+    "id": "demo-isolation",
+    "command": "npm run test:e2e -- --grep @claim:demo-isolation",
+    "status": "pass"
+  },
+  {
+    "id": "boundary-wait",
+    "command": "npm run test:e2e -- --grep @claim:boundary-wait",
+    "status": "pass"
+  },
+  {
+    "id": "no-account",
+    "command": "npm run test:e2e -- --grep @claim:no-account",
+    "status": "pass"
+  },
+  {
+    "id": "privacy-permissions",
+    "command": "npm run test:e2e -- --grep @claim:privacy-permissions",
+    "status": "pass"
+  },
+  {
+    "id": "download-build",
+    "command": "npm run test:e2e -- --grep @claim:download-build",
+    "status": "pass"
+  },
+  {
+    "id": "site-routes",
+    "command": "npm run test:e2e -- --grep @claim:site-routes",
+    "status": "pass"
+  },
+  {
+    "id": "accessible-demo",
+    "command": "npm run test:e2e -- --grep @claim:accessible-demo",
+    "status": "pass"
+  },
+  {
+    "id": "interval-options",
+    "command": "npm test -- -t @claim:interval-options",
+    "status": "pass"
+  },
+  {
+    "id": "snooze-disable",
+    "command": "npm test -- -t @claim:snooze-disable",
+    "status": "pass"
+  },
+  {
+    "id": "break-duration",
+    "command": "npm test -- -t @claim:break-duration",
+    "status": "pass"
+  },
+  {
+    "id": "security-headers",
+    "command": "npm test -- -t @claim:security-headers",
+    "status": "pass"
+  },
+  {
+    "id": "browser-alarm-timer",
+    "command": "npm run test:e2e -- --grep @claim:browser-alarm-timer",
+    "status": "pass"
+  },
+  {
+    "id": "extension-storage-schema",
+    "command": "npm run test:e2e -- --grep @claim:extension-storage-schema",
+    "status": "pass"
+  },
+  {
+    "id": "pause-animation",
+    "command": "npm run test:e2e -- --grep @claim:pause-animation",
+    "status": "pass"
+  },
+  {
+    "id": "accessible-extension",
+    "command": "npm run test:e2e -- --grep @claim:accessible-extension",
+    "status": "pass"
+  },
+  {
+    "id": "site-privacy",
+    "command": "npm run test:e2e -- --grep @claim:site-privacy",
+    "status": "pass"
+  },
+  {
+    "id": "cache-policy",
+    "command": "npm test -- -t @claim:cache-policy",
+    "status": "pass"
+  },
+  {
+    "id": "asset-license",
+    "command": "npm run test:e2e -- --grep @claim:asset-license",
+    "status": "pass"
+  },
+  {
+    "id": "release-output",
+    "command": "npm run build && npm test -- -t @claim:release-output",
+    "status": "pass"
+  },
+  {
+    "id": "route-metadata",
+    "command": "npm run test:e2e -- --grep @claim:route-metadata",
+    "status": "pass"
+  },
+  {
+    "id": "touch-targets",
+    "command": "npm run test:e2e -- --grep @claim:touch-targets",
+    "status": "pass"
+  }
+]

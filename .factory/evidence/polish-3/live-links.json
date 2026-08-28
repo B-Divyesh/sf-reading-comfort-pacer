@@ -1,0 +1,37 @@
+[
+  {
+    "href": "https://github.com/B-Divyesh/sf-reading-comfort-pacer",
+    "status": 200,
+    "finalUrl": "https://github.com/B-Divyesh/sf-reading-comfort-pacer"
+  },
+  {
+    "href": "https://github.com/B-Divyesh/sf-reading-comfort-pacer/issues",
+    "status": 200,
+    "finalUrl": "https://github.com/B-Divyesh/sf-reading-comfort-pacer/issues"
+  },
+  {
+    "href": "https://reading-comfort-pacer.sociobot.in/",
+    "status": 200,
+    "finalUrl": "https://reading-comfort-pacer.sociobot.in/"
+  },
+  {
+    "href": "https://reading-comfort-pacer.sociobot.in/demo/?demo=1",
+    "status": 200,
+    "finalUrl": "https://reading-comfort-pacer.sociobot.in/demo/?demo=1"
+  },
+  {
+    "href": "https://reading-comfort-pacer.sociobot.in/downloads/reading-comfort-pacer-chrome.zip",
+    "status": 200,
+    "finalUrl": "https://reading-comfort-pacer.sociobot.in/downloads/reading-comfort-pacer-chrome.zip"
+  },
+  {
+    "href": "https://reading-comfort-pacer.sociobot.in/privacy/",
+    "status": 200,
+    "finalUrl": "https://reading-comfort-pacer.sociobot.in/privacy/"
+  },
+  {
+    "href": "https://reading-comfort-pacer.sociobot.in/terms/",
+    "status": 200,
+    "finalUrl": "https://reading-comfort-pacer.sociobot.in/terms/"
+  }
+]

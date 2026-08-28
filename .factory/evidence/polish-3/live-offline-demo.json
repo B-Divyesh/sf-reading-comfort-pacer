@@ -1,0 +1,5 @@
+{
+  "initialLoad": "online",
+  "offlineAfterLoad": true,
+  "startedDistanceBreak": true
+}

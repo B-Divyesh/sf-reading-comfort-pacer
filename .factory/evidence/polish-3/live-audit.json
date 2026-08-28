@@ -1,0 +1,333 @@
+[
+  {
+    "route": "/",
+    "viewport": "mobile",
+    "colorScheme": "light",
+    "status": 200,
+    "basics": {
+      "title": "Reading Comfort Pacer — breaks after stopping points",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 10,
+    "axeViolations": 0,
+    "requests": 5
+  },
+  {
+    "route": "/demo/?demo=1",
+    "viewport": "mobile",
+    "colorScheme": "light",
+    "status": 200,
+    "basics": {
+      "title": "Demo — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 9,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/privacy/",
+    "viewport": "mobile",
+    "colorScheme": "light",
+    "status": 200,
+    "basics": {
+      "title": "Privacy — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 7,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/terms/",
+    "viewport": "mobile",
+    "colorScheme": "light",
+    "status": 200,
+    "basics": {
+      "title": "Terms — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 6,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/not-a-real-route-polish-3",
+    "viewport": "mobile",
+    "colorScheme": "light",
+    "status": 404,
+    "basics": {
+      "title": "Page not found — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 7,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/",
+    "viewport": "desktop",
+    "colorScheme": "light",
+    "status": 200,
+    "basics": {
+      "title": "Reading Comfort Pacer — breaks after stopping points",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 13,
+    "axeViolations": 0,
+    "requests": 6
+  },
+  {
+    "route": "/demo/?demo=1",
+    "viewport": "desktop",
+    "colorScheme": "light",
+    "status": 200,
+    "basics": {
+      "title": "Demo — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 12,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/privacy/",
+    "viewport": "desktop",
+    "colorScheme": "light",
+    "status": 200,
+    "basics": {
+      "title": "Privacy — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 10,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/terms/",
+    "viewport": "desktop",
+    "colorScheme": "light",
+    "status": 200,
+    "basics": {
+      "title": "Terms — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 9,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/not-a-real-route-polish-3",
+    "viewport": "desktop",
+    "colorScheme": "light",
+    "status": 404,
+    "basics": {
+      "title": "Page not found — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 10,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/",
+    "viewport": "mobile",
+    "colorScheme": "dark",
+    "status": 200,
+    "basics": {
+      "title": "Reading Comfort Pacer — breaks after stopping points",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 10,
+    "axeViolations": 0,
+    "requests": 5
+  },
+  {
+    "route": "/demo/?demo=1",
+    "viewport": "mobile",
+    "colorScheme": "dark",
+    "status": 200,
+    "basics": {
+      "title": "Demo — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 9,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/privacy/",
+    "viewport": "mobile",
+    "colorScheme": "dark",
+    "status": 200,
+    "basics": {
+      "title": "Privacy — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 7,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/terms/",
+    "viewport": "mobile",
+    "colorScheme": "dark",
+    "status": 200,
+    "basics": {
+      "title": "Terms — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 6,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/not-a-real-route-polish-3",
+    "viewport": "mobile",
+    "colorScheme": "dark",
+    "status": 404,
+    "basics": {
+      "title": "Page not found — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 7,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/",
+    "viewport": "desktop",
+    "colorScheme": "dark",
+    "status": 200,
+    "basics": {
+      "title": "Reading Comfort Pacer — breaks after stopping points",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 13,
+    "axeViolations": 0,
+    "requests": 5
+  },
+  {
+    "route": "/demo/?demo=1",
+    "viewport": "desktop",
+    "colorScheme": "dark",
+    "status": 200,
+    "basics": {
+      "title": "Demo — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 12,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/privacy/",
+    "viewport": "desktop",
+    "colorScheme": "dark",
+    "status": 200,
+    "basics": {
+      "title": "Privacy — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 10,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/terms/",
+    "viewport": "desktop",
+    "colorScheme": "dark",
+    "status": 200,
+    "basics": {
+      "title": "Terms — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 9,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/not-a-real-route-polish-3",
+    "viewport": "desktop",
+    "colorScheme": "dark",
+    "status": 404,
+    "basics": {
+      "title": "Page not found — Reading Comfort Pacer",
+      "lang": "en",
+      "h1": 1,
+      "main": 1,
+      "overflow": false
+    },
+    "controls": 10,
+    "axeViolations": 0,
+    "requests": 4
+  },
+  {
+    "route": "/demo/?demo=1",
+    "flow": "cold-sentinel-start-finish-reset-exit",
+    "demoExit": {
+      "sentinel": "real-data-sentinel",
+      "demo": null
+    },
+    "coldHeadingFocused": false,
+    "requests": 14,
+    "status": "pass"
+  }
+]
