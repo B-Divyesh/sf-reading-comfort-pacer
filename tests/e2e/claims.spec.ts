@@ -1,5 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { expect, test } from "@playwright/test";
+import AxeBuilder from "@axe-core/playwright";
 
 test("@claim:demo-isolation demo data is isolated and resettable", async ({ page }) => {
   await page.goto("/");
@@ -78,10 +79,13 @@ test("@claim:site-routes serves a designed same-origin unknown route", async ({ 
 test("@claim:accessible-demo works by keyboard and honors reduced motion", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/demo/?demo=1");
+  await expect(page.getByRole("status")).toHaveText("Demo — sample data, nothing is saved");
   await page.getByRole("button", { name: "Start distance break" }).focus();
   await page.keyboard.press("Enter");
   await expect(page.getByText("Distance break in progress")).toBeVisible();
   expect(await page.evaluate(() => getComputedStyle(document.documentElement).scrollBehavior)).toBe("auto");
+  const results = await new AxeBuilder({ page: page as never }).analyze();
+  expect(results.violations).toEqual([]);
 });
 
 test("@claim:site-privacy public routes use no cookies, analytics, or third-party requests", async ({ browser }) => {
@@ -123,12 +127,18 @@ test("@claim:route-metadata gives every route its own share metadata", async ({ 
   }
 });
 
-test("@claim:touch-targets visible site controls are at least 44 pixels", async ({ page }) => {
-  await page.goto("/demo/?demo=1");
-  for (const target of await page.locator("a:visible, button:visible").all()) {
-    const box = await target.boundingBox();
-    expect(box, (await target.textContent()) ?? undefined).not.toBeNull();
-    expect(box!.width).toBeGreaterThanOrEqual(44);
-    expect(box!.height).toBeGreaterThanOrEqual(44);
+test("@claim:touch-targets visible site controls are at least 44 pixels on every route", async ({ page }) => {
+  const routes = ["/", "/demo/?demo=1", "/privacy/", "/terms/", "/not-a-real-route-touch-targets"];
+  for (const viewport of [{ width: 390, height: 844 }, { width: 1440, height: 900 }]) {
+    await page.setViewportSize(viewport);
+    for (const route of routes) {
+      await page.goto(route);
+      const targets = await page.locator("a:visible, button:visible").evaluateAll((elements) => elements.map((element) => {
+        const rect = element.getBoundingClientRect();
+        return { label: element.getAttribute("aria-label") ?? element.textContent?.trim(), width: rect.width, height: rect.height };
+      }));
+      expect(targets.length, `${route} at ${viewport.width}px`).toBeGreaterThan(0);
+      expect(targets.every(({ width, height }) => width >= 44 && height >= 44), `${route} at ${viewport.width}px: ${JSON.stringify(targets)}`).toBe(true);
+    }
   }
 });
