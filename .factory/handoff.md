@@ -24,7 +24,7 @@ npm run check       # pass: typecheck, lint, 17 unit tests, production build
 npm run test:e2e    # pass: 17 Playwright/axe/extension tests
 ```
 
-All eleven commands in `.factory/claims.json` passed. `npm audit --audit-level=moderate` reported 0 vulnerabilities. The production build produced `dist/extension`, `dist/site`, and `dist/site/downloads/reading-comfort-pacer-chrome.zip`.
+All eleven commands in `.factory/claims.json` also passed from that clean clone. `npm audit --audit-level=moderate` reported 0 vulnerabilities. The production build produced `dist/extension`, `dist/site`, and `dist/site/downloads/reading-comfort-pacer-chrome.zip`.
 
 Post-deploy verification:
 
