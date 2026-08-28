@@ -1,5 +1,8 @@
 import { resolve } from "node:path";
+import { readFileSync } from "node:fs";
 import { defineConfig } from "vite";
+
+const productVersion = JSON.parse(readFileSync(resolve(import.meta.dirname, "package.json"), "utf8")) as { version: string };
 
 export default defineConfig({
   root: "site",
@@ -17,5 +20,9 @@ export default defineConfig({
         notFound: resolve(import.meta.dirname, "site/404/index.html")
       }
     }
-  }
+  },
+  plugins: [{
+    name: "release-version",
+    transformIndexHtml(html) { return html.replaceAll("__PACER_VERSION__", productVersion.version); }
+  }]
 });

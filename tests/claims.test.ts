@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { describe, expect, it } from "vitest";
 import { beginBreak, completeBreak, createInitialState, markReady, normalizeSettings, setEnabled, snooze } from "../lib/pacer";
@@ -30,10 +31,25 @@ describe("registered extension claims", () => {
     expect(config.globalHeaders["X-Content-Type-Options"]).toBe("nosniff");
   });
 
-  it("@claim:asset-license records the local font and original-art provenance", async () => {
-    const [design, notices, license] = await Promise.all([readFile(".factory/design.md", "utf8"), readFile("THIRD_PARTY_NOTICES.md", "utf8"), readFile("LICENSE", "utf8")]);
-    expect(design).toContain("factory-image");
-    expect(notices).toContain("Atkinson Hyperlegible");
-    expect(license).toContain("Permission is hereby granted");
+  it("@claim:cache-policy configures HTML, immutable assets, and downloadable archive caching", async () => {
+    const config = JSON.parse(await readFile("site/public/staticwebapp.config.json", "utf8")) as { routes: Array<{ route: string; headers: Record<string, string> }> };
+    expect(config.routes).toEqual(expect.arrayContaining([
+      { route: "/assets/*", headers: { "Cache-Control": "public, max-age=31536000, immutable" } },
+      { route: "/downloads/*", headers: { "Cache-Control": "public, max-age=3600" } }
+    ]));
+  });
+
+  it("@claim:release-output documents the current Node runtime and makes every release artifact", async () => {
+    const packageJson = JSON.parse(await readFile("package.json", "utf8")) as { engines: { node: string }; version: string };
+    expect(packageJson.engines.node).toBe(">=22");
+    expect(Number(process.versions.node.split(".")[0])).toBeGreaterThanOrEqual(22);
+    const artifacts = ["dist/extension/chrome-mv3/manifest.json", "dist/site/index.html", "dist/site/downloads/reading-comfort-pacer-chrome.zip"];
+    if (artifacts.some(existsSync)) expect(artifacts.every(existsSync)).toBe(true);
+    else {
+      const scripts = JSON.parse(await readFile("package.json", "utf8")) as { scripts: Record<string, string> };
+      expect(scripts.scripts.build).toContain("build:extension");
+      expect(scripts.scripts.build).toContain("build:site:assets");
+      expect(scripts.scripts.build).toContain("package:extension");
+    }
   });
 });

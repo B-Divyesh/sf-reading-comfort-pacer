@@ -4,7 +4,7 @@ export default defineConfig({
   testDir: "tests/e2e",
   use: { baseURL: "http://127.0.0.1:4173", viewport: { width: 390, height: 844 } },
   webServer: {
-    command: "npm run build && npx vite preview --config vite.site.config.ts --host 127.0.0.1 --port 4173",
+    command: "npm run build && node scripts/serve-site.mjs",
     port: 4173,
     reuseExistingServer: false,
     timeout: 120_000

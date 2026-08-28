@@ -22,7 +22,7 @@ if (demoRoot) {
   const render = () => {
     const state = read();
     const screens: Record<DemoPhase, string> = {
-      ready: `<p class="demo-state">Break is ready</p><h1 tabindex="-1">Finish your stopping point, then start a distance break.</h1><p>Sample: you have read a project brief for 20 minutes. The reminder is waiting; it has not interrupted your page.</p><button class="button button-primary" type="button" data-demo-action="start">I’m at a stopping point <span aria-hidden="true">→</span></button>`,
+      ready: `<p class="demo-state">Break is ready</p><h1 tabindex="-1">Finish your stopping point, then start a distance break.</h1><p>Sample: you have read a project brief for 20 minutes. The reminder is waiting; it has not interrupted your page.</p><button class="button button-primary" type="button" data-demo-action="start">Start distance break <span aria-hidden="true">→</span></button>`,
       breaking: `<p class="demo-state">Distance break in progress</p><h1 tabindex="-1">Look beyond the display for 20 seconds.</h1><p class="demo-clock" aria-live="polite">00:20</p><p>Pick a far object in the room or outside. This sample does not use your camera.</p><button class="button button-primary" type="button" data-demo-action="finish">Finish break</button>`,
       complete: `<p class="demo-state">Break complete</p><h1 tabindex="-1">Your next sample reminder is scheduled.</h1><p>You completed one temporary distance break. Reset to see the ready reminder again.</p><button class="button button-outline" type="button" data-demo-action="reset">Reset demo</button>`
     };

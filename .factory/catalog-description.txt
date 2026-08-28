@@ -1,1 +1,1 @@
-Take screen breaks after a stopping point with a private Chromium extension for screen workers.
+Take screen breaks after a natural stopping point with a private browser reminder.

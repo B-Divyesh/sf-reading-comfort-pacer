@@ -17,7 +17,7 @@ Open <https://reading-comfort-pacer.sociobot.in/demo/?demo=1>. The sample starts
 - Offers 20, 30, or 60-second distance breaks.
 - Lets you snooze a ready reminder for ten minutes.
 - Lets you turn reminders off while keeping settings.
-- Keeps settings and aggregate break counts in local extension storage.
+- Keeps your settings and break totals in your browser.
 
 This is a general ergonomic utility. It is not medical advice or treatment.
 
@@ -35,7 +35,7 @@ npm run test:e2e
 
 `npm run build` creates these release files:
 
-- `dist/extension/chrome-mv3/` — the folder to load in a Chromium browser.
+- `dist/extension/chrome-mv3/` — the folder to load from Chrome’s extension page.
 - `dist/site/` — the static website.
 - `dist/site/downloads/reading-comfort-pacer-chrome.zip` — the downloadable extension archive.
 
@@ -43,7 +43,7 @@ To load the extension, open `chrome://extensions`, enable Developer mode, choose
 
 ## How it is built
 
-WXT builds the browser extension. Its background worker keeps the timer state and schedules browser alarms. The popup, settings page, and break page ask that worker to change the state.
+WXT builds the browser extension. The extension schedules reminders with the browser’s alarm system. It keeps its settings and break totals in browser storage.
 
 The website is a static Vite site. It has no account, analytics, cookies, third-party scripts, or third-party fonts. The extension requests only `storage` and `alarms` permissions. It has no host or content-script permission.
 
@@ -51,4 +51,4 @@ Atkinson Hyperlegible Next is self-hosted under the SIL Open Font License. Produ
 
 ## Deploy
 
-Deploy the contents of `dist/site/` as a static site. `staticwebapp.config.json` provides security headers, caching rules, and the designed 404 route. Privacy and terms pages are at `/privacy/` and `/terms/`.
+Deploy the contents of `dist/site/` as a static site. `staticwebapp.config.json` provides security headers, a one-year cache for hashed assets, a one-hour cache for the download, and the designed 404 route. Privacy and terms pages are at `/privacy/` and `/terms/`.
