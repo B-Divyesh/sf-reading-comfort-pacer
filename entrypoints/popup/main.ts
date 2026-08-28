@@ -3,6 +3,7 @@ import "./style.css";
 import { browser } from "wxt/browser";
 import type { PacerMessage, PacerResponse } from "../../lib/messages";
 import { formatRemaining, type PacerState } from "../../lib/pacer";
+import { commandHint } from "../../lib/shortcut";
 
 const loading = document.querySelector<HTMLElement>("#loading")!;
 const pacer = document.querySelector<HTMLElement>("#pacer")!;
@@ -13,6 +14,7 @@ const stateHelp = document.querySelector<HTMLElement>("#state-help")!;
 const time = document.querySelector<HTMLElement>("#time")!;
 const actions = document.querySelector<HTMLElement>("#actions")!;
 const completed = document.querySelector<HTMLElement>("#completed")!;
+const shortcut = document.querySelector<HTMLElement>("#shortcut")!;
 let current: PacerState | undefined;
 let ticker: number | undefined;
 
@@ -90,7 +92,11 @@ async function load(): Promise<void> {
   loading.hidden = false;
   pacer.hidden = true;
   error.hidden = true;
-  try { render(await send({ type: "GET_STATE" })); } catch (cause) { showError(cause); }
+  try {
+    const [next, commands] = await Promise.all([send({ type: "GET_STATE" }), browser.commands.getAll()]);
+    render(next);
+    shortcut.textContent = commandHint(commands);
+  } catch (cause) { showError(cause); }
 }
 
 document.querySelector("#retry")?.addEventListener("click", () => void load());

@@ -64,6 +64,7 @@ motion.addEventListener("click", () => {
 void getState().then((next) => {
   state = next;
   if (next.phase !== "breaking" || !next.breakStarted) {
+    document.body.classList.add("is-complete");
     title.textContent = "This route is already complete";
     instruction.textContent = "Open the pacer when you’re ready to begin another reading interval.";
     countdown.textContent = "—";
@@ -76,6 +77,8 @@ void getState().then((next) => {
   tick();
   timer = window.setInterval(tick, 250);
 }).catch((cause) => {
+  document.body.classList.add("is-complete");
+  motion.hidden = true;
   status.textContent = cause instanceof Error ? cause.message : "The break could not start. Close this tab and try again.";
   countdown.textContent = "—";
 });

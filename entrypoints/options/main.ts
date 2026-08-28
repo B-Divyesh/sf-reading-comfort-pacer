@@ -6,7 +6,6 @@ import type { PacerState } from "../../lib/pacer";
 
 const form = document.querySelector<HTMLFormElement>("#settings-form")!;
 const saveStatus = document.querySelector<HTMLElement>("#save-status")!;
-let state: PacerState | undefined;
 
 async function send(message: PacerMessage): Promise<PacerState> {
   const response = await browser.runtime.sendMessage(message) as PacerResponse;
@@ -15,10 +14,10 @@ async function send(message: PacerMessage): Promise<PacerState> {
 }
 
 function fill(next: PacerState): void {
-  state = next;
   const interval = form.querySelector<HTMLInputElement>(`input[name="interval"][value="${next.settings.intervalMinutes}"]`);
   if (interval) interval.checked = true;
-  form.elements.namedItem("breakSeconds") && ((form.elements.namedItem("breakSeconds") as HTMLSelectElement).value = String(next.settings.breakSeconds));
+  const breakSeconds = form.elements.namedItem("breakSeconds") as HTMLSelectElement | null;
+  if (breakSeconds) breakSeconds.value = String(next.settings.breakSeconds);
   (form.elements.namedItem("vibration") as HTMLInputElement).checked = next.settings.vibration;
   (form.elements.namedItem("enabled") as HTMLInputElement).checked = next.phase !== "disabled";
   document.querySelector("#completed")!.textContent = String(next.stats.completed);

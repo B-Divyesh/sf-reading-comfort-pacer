@@ -14,7 +14,8 @@ body { overflow: hidden; }
 .distance-marker { position: absolute; right: 24%; top: 43%; width: 22px; height: 22px; border: 3px solid var(--route); border-radius: 50%; box-shadow: 0 0 0 12px color-mix(in srgb, var(--route) 14%, transparent), 0 0 0 24px color-mix(in srgb, var(--route) 7%, transparent); animation: marker-breathe 4s ease-in-out infinite alternate; }
 .distance-marker::after { content: ""; position: absolute; top: 50%; left: 50%; width: 4px; height: 4px; border-radius: 50%; background: var(--route); transform: translate(-50%, -50%); }
 .motion-paused .ridge-front, .motion-paused .distance-marker { animation-play-state: paused; }
-.is-complete .distance-marker { animation: none; background: var(--forest); border-color: var(--forest); }
+.is-complete .ridge-front, .is-complete .distance-marker { animation: none; }
+.is-complete .distance-marker { background: var(--forest); border-color: var(--forest); }
 @keyframes breathe { to { transform: scale(1.015) translateY(-1.5%); } }
 @keyframes marker-breathe { to { box-shadow: 0 0 0 18px color-mix(in srgb, var(--route) 10%, transparent), 0 0 0 34px transparent; } }
 @media (max-width: 600px) {

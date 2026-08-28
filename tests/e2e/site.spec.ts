@@ -23,4 +23,28 @@ test("landing page stays usable at 390px and exposes a real download", async ({ 
   await expect(download).toHaveAttribute("href", "/downloads/reading-comfort-pacer-chrome.zip");
   const response = await page.request.get("/downloads/reading-comfort-pacer-chrome.zip");
   expect(response.ok()).toBe(true);
+  expect(response.headers()["content-type"]).toMatch(/application\/(zip|octet-stream)/);
+  expect((await response.body()).byteLength).toBeGreaterThan(100_000);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
+
+  await page.locator(".skip-link").focus();
+  const targets = await page.locator(".skip-link, .footer-links a").evaluateAll((elements) =>
+    elements.map((element) => {
+      const rect = element.getBoundingClientRect();
+      return { label: element.textContent?.trim(), width: rect.width, height: rect.height };
+    })
+  );
+  expect(targets.every(({ width, height }) => width >= 44 && height >= 44), JSON.stringify(targets)).toBe(true);
+});
+
+test("landing page remains readable and axe-clean in dark mode", async ({ page }) => {
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await page.emulateMedia({ colorScheme: "dark" });
+  await page.goto("/");
+  const cue = page.locator("#cue-title");
+  await expect(cue).toBeVisible();
+  expect(await cue.evaluate((element) => getComputedStyle(element).color)).toBe("rgb(245, 240, 229)");
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= document.documentElement.clientWidth)).toBe(true);
+  const results = await new AxeBuilder({ page: page as never }).analyze();
+  expect(results.violations.filter((violation) => ["serious", "critical"].includes(violation.impact ?? ""))).toEqual([]);
 });

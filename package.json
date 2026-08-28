@@ -4,16 +4,22 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "postinstall": "wxt prepare",
+    "prepare:wxt": "wxt prepare",
+    "pretest": "npm run prepare:wxt",
+    "precheck": "npm run prepare:wxt",
     "dev": "wxt",
     "dev:site": "vite --config vite.site.config.ts",
     "build:extension": "wxt build",
-    "build:site": "vite build --config vite.site.config.ts",
+    "build:site:assets": "vite build --config vite.site.config.ts",
+    "build:site": "npm run build:extension && npm run build:site:assets && npm run package:extension",
     "package:extension": "node scripts/package-extension.mjs",
-    "build": "npm run clean && npm run build:extension && npm run build:site && npm run package:extension",
+    "build": "npm run clean && npm run build:extension && npm run build:site:assets && npm run package:extension",
     "clean": "node scripts/clean.mjs",
+    "lint": "oxlint entrypoints lib scripts site tests *.ts",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "check": "tsc --noEmit && npm test && npm run build"
+    "check": "tsc --noEmit && npm run lint && npm test && npm run build"
   },
   "dependencies": {
     "@fontsource-variable/atkinson-hyperlegible-next": "5.3.0"
@@ -23,6 +29,7 @@
     "@playwright/test": "1.58.2",
     "@types/chrome": "0.2.7",
     "archiver": "8.0.0",
+    "oxlint": "1.80.0",
     "playwright": "1.58.2",
     "sharp": "0.35.4",
     "typescript": "7.0.2",

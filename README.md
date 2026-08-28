@@ -9,7 +9,7 @@ Live site: <https://reading-comfort-pacer.sociobot.in>
 - Persists 10, 20, 30, 45, or 60-minute reading intervals with the browser alarms API.
 - Requests a boundary without covering or inspecting the current page.
 - Starts a 20, 30, or 60-second distance cue only after explicit confirmation.
-- Supports a keyboard command (`Alt+Shift+B`, or `Command+Shift+B` on macOS) when a break is ready.
+- Suggests a keyboard command (`Alt+Shift+R`, or `Command+Shift+Y` on macOS) when a break is ready and reports clearly if the browser leaves it unassigned.
 - Offers a 10-minute intentional snooze, optional device vibration, a motion-pause control, and full disable.
 - Stores only settings, timer state, and aggregate accepted/snoozed/completed counts in local extension storage.
 
@@ -24,8 +24,10 @@ npm install
 npm run dev              # WXT extension development
 npm run dev:site         # landing site development
 npm test                 # state-machine unit tests
+npm run lint             # static source checks
 npm run test:e2e         # installed-extension + site/axe browser tests
 npm run check            # typecheck, unit test, and production build
+npm run build:site       # standalone deployable site build, including the extension ZIP
 ```
 
 The exact reproducible production command is:

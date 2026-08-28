@@ -10,7 +10,7 @@ export default defineConfig({
     action: { default_title: "Reading Comfort Pacer" },
     commands: {
       "confirm-boundary": {
-        suggested_key: { default: "Alt+Shift+B", mac: "Command+Shift+B" },
+        suggested_key: { default: "Alt+Shift+R", mac: "Command+Shift+Y" },
         description: "Start a ready distance break"
       }
     },

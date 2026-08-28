@@ -8,6 +8,7 @@ import {
   completeBreak,
   createInitialState,
   markReady,
+  normalizeSettings,
   normalizeState,
   setEnabled,
   snooze,
@@ -82,7 +83,7 @@ export default defineBackground(() => {
             state = setEnabled(state, message.enabled);
             break;
           case "SAVE_SETTINGS": {
-            const settings: PacerSettings = message.settings;
+            const settings: PacerSettings = normalizeSettings(message.settings);
             state = {
               ...state,
               settings,

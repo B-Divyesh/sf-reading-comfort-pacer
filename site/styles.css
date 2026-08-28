@@ -23,7 +23,7 @@ img { max-width: 100%; height: auto; }
 a { color: var(--route-dark); text-underline-offset: 3px; }
 button, a { -webkit-tap-highlight-color: transparent; }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 4px; }
-.skip-link { position: fixed; z-index: 100; top: 10px; left: 12px; padding: 10px 14px; color: white; background: #174f91; transform: translateY(-180%); }
+.skip-link { position: fixed; z-index: 100; top: 10px; left: 12px; display: flex; min-height: 44px; align-items: center; padding: 10px 14px; color: white; background: #174f91; transform: translateY(-180%); }
 .skip-link:focus { transform: translateY(0); }
 .site-header, .site-footer, main > section, .legal-main { width: min(100% - 40px, 1160px); margin-inline: auto; }
 .site-header { display: flex; min-height: 84px; align-items: center; justify-content: space-between; gap: 20px; }
@@ -61,6 +61,7 @@ p, li { font-size: 17px; line-height: 1.55; }
 .steps li::before { content: "0" counter(route) " /"; display: block; margin-bottom: 32px; color: var(--route-dark); font-family: ui-monospace, "SFMono-Regular", Consolas, monospace; font-size: 13px; font-weight: 800; }
 .steps p { color: var(--muted); }
 .cue-preview { display: grid; grid-template-columns: .8fr 1.2fr; gap: 32px; align-items: center; padding: clamp(36px, 7vw, 88px); background: var(--ink); color: var(--paper); overflow: hidden; }
+.cue-preview h2 { color: #f5f0e5; }
 .cue-preview p { max-width: 43ch; color: #c9d1cb; }
 .distance-map { position: relative; min-height: 300px; border: 1px solid #5d6b63; background: repeating-radial-gradient(ellipse at 72% 52%, transparent 0 21px, #5b6b61 22px 23px, transparent 24px 39px); }
 .distance-map::after { content: ""; position: absolute; top: 45%; left: 69%; width: 18px; height: 18px; border: 3px solid #f07b68; border-radius: 50%; box-shadow: 0 0 0 14px rgb(240 123 104 / .18); }
@@ -73,6 +74,7 @@ p, li { font-size: 17px; line-height: 1.55; }
 .site-footer { display: flex; justify-content: space-between; gap: 24px; padding-block: 36px; color: var(--muted); border-top: 1px solid var(--contour); }
 .site-footer p { margin: 0; font-size: 14px; }
 .footer-links { display: flex; gap: 20px; }
+.footer-links a { display: inline-flex; min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
 .legal-main { max-width: 760px; min-height: calc(100vh - 180px); padding-block: 72px 112px; }
 .legal-main h1 { max-width: 13ch; font-size: clamp(42px, 7vw, 68px); }
 .legal-main h2 { margin-top: 48px; font-size: 26px; }

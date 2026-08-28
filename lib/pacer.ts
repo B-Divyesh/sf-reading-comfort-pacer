@@ -29,6 +29,34 @@ export const DEFAULT_SETTINGS: PacerSettings = {
   vibration: false
 };
 
+const INTERVAL_MINUTES = [10, 20, 30, 45, 60] as const;
+const BREAK_SECONDS = [20, 30, 60] as const;
+
+function isRecord(value: unknown): value is Record<string, unknown> {
+  return typeof value === "object" && value !== null && !Array.isArray(value);
+}
+
+function allowedNumber(value: unknown, allowed: readonly number[], fallback: number): number {
+  return typeof value === "number" && Number.isFinite(value) && allowed.includes(value) ? value : fallback;
+}
+
+function count(value: unknown): number {
+  return typeof value === "number" && Number.isSafeInteger(value) && value >= 0 ? value : 0;
+}
+
+function timestamp(value: unknown): number | null {
+  return typeof value === "number" && Number.isFinite(value) && value >= 0 ? value : null;
+}
+
+export function normalizeSettings(value: unknown): PacerSettings {
+  const input = isRecord(value) ? value : {};
+  return {
+    intervalMinutes: allowedNumber(input.intervalMinutes, INTERVAL_MINUTES, DEFAULT_SETTINGS.intervalMinutes),
+    breakSeconds: allowedNumber(input.breakSeconds, BREAK_SECONDS, DEFAULT_SETTINGS.breakSeconds),
+    vibration: typeof input.vibration === "boolean" ? input.vibration : DEFAULT_SETTINGS.vibration
+  };
+}
+
 export function createInitialState(now = Date.now()): PacerState {
   return {
     phase: "running",
@@ -40,19 +68,26 @@ export function createInitialState(now = Date.now()): PacerState {
 }
 
 export function normalizeState(value: unknown, now = Date.now()): PacerState {
-  if (!value || typeof value !== "object") return createInitialState(now);
-  const input = value as Partial<PacerState>;
-  const settings = { ...DEFAULT_SETTINGS, ...(input.settings ?? {}) };
-  const stats = { completed: 0, snoozed: 0, accepted: 0, ...(input.stats ?? {}) };
+  if (!isRecord(value)) return createInitialState(now);
+  const input = value;
+  const settings = normalizeSettings(input.settings);
+  const inputStats = isRecord(input.stats) ? input.stats : {};
+  const stats = {
+    completed: count(inputStats.completed),
+    snoozed: count(inputStats.snoozed),
+    accepted: count(inputStats.accepted)
+  };
   const allowed: PacerPhase[] = ["running", "ready", "breaking", "disabled"];
   let phase = allowed.includes(input.phase as PacerPhase) ? (input.phase as PacerPhase) : "running";
-  let nextDue: number | null = typeof input.nextDue === "number" ? input.nextDue : now + settings.intervalMinutes * 60_000;
-  const breakStarted = typeof input.breakStarted === "number" ? input.breakStarted : null;
+  let nextDue: number | null = timestamp(input.nextDue) ?? now + settings.intervalMinutes * 60_000;
+  let breakStarted = timestamp(input.breakStarted);
 
   if (phase === "running" && nextDue <= now) phase = "ready";
-  if (phase === "breaking" && breakStarted && now - breakStarted > settings.breakSeconds * 2_000) {
+  if (phase === "ready") nextDue = null;
+  if (phase === "breaking" && (breakStarted === null || now - breakStarted > settings.breakSeconds * 2_000)) {
     phase = "running";
     nextDue = now + settings.intervalMinutes * 60_000;
+    breakStarted = null;
   }
   if (phase === "disabled") nextDue = null;
 

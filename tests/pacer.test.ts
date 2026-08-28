@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { beginBreak, completeBreak, createInitialState, formatRemaining, markReady, normalizeState, setEnabled, snooze } from "../lib/pacer";
+import { beginBreak, completeBreak, createInitialState, formatRemaining, markReady, normalizeSettings, normalizeState, setEnabled, snooze } from "../lib/pacer";
 
 describe("pacer state", () => {
   it("starts a local twenty-minute route", () => {
@@ -40,6 +40,26 @@ describe("pacer state", () => {
   it("recovers timers that elapsed while the browser was asleep", () => {
     const state = createInitialState(0);
     expect(normalizeState(state, 1_300_000).phase).toBe("ready");
+  });
+
+  it("sanitizes corrupted settings, counts, timestamps, and phases", () => {
+    const state = normalizeState({
+      phase: "breaking",
+      nextDue: "soon",
+      breakStarted: false,
+      settings: { intervalMinutes: -1, breakSeconds: 0, vibration: "yes" },
+      stats: { completed: -3, snoozed: 1.5, accepted: "many" }
+    }, 10_000);
+
+    expect(state).toEqual({
+      phase: "running",
+      nextDue: 1_210_000,
+      breakStarted: null,
+      settings: { intervalMinutes: 20, breakSeconds: 20, vibration: false },
+      stats: { completed: 0, snoozed: 0, accepted: 0 }
+    });
+    expect(normalizeSettings({ intervalMinutes: 60, breakSeconds: 30, vibration: true }))
+      .toEqual({ intervalMinutes: 60, breakSeconds: 30, vibration: true });
   });
 
   it("formats stable, tabular countdown text", () => {
