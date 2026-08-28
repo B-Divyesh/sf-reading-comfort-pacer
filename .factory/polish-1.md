@@ -55,4 +55,8 @@ Candidate repaired from `c03f51ab00fba458769a43a94ab2cf4e1ca752b6`. “Local evi
 
 ## Live verification
 
-Pending deployment in this work order.
+- Deployed `d53a8939947617e50ceb751d2316a13f2fa7569e` to <https://reading-comfort-pacer.sociobot.in> using the static work-order deploy script.
+- Factory `verify-url.sh` passed: HTTP 200, title/lang/one h1/main/alt checks, and no console or page errors. Evidence: `.factory/evidence/polish-1/verify.json` and `live-final-home-no-focus.png`.
+- Cold Chromium checks covered `/`, `/demo/?demo=1`, `/privacy/`, `/terms/`, and `/not-a-real-route` at 390px in light and dark. Every page had one h1/main, no overflow, no foreign request, and no serious/critical axe result.
+- The unknown route returned HTTP 404 with title `Page not found — Reading Comfort Pacer` and same-origin assets. Evidence: `.factory/evidence/polish-1/404-headers.txt`.
+- The live root `/?demo=1` redirected to `/demo/?demo=1`; after complete/reset, a seeded real `pacerState` sentinel remained unchanged while `demo:pacer` returned to the ready sample.
