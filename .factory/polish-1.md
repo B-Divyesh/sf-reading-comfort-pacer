@@ -50,7 +50,7 @@ Candidate repaired from `c03f51ab00fba458769a43a94ab2cf4e1ca752b6`. “Local evi
 
 - `npm ci` — pass, 0 audit vulnerabilities.
 - `npm run check` — pass: typecheck, lint, 17 unit tests, production build.
-- `npm run test:e2e` — pass: 16 browser tests, including extension, demo, metadata, route focus, mobile, and axe coverage.
+- `npm run test:e2e` — pass: 17 browser tests, including extension, demo, metadata, route focus, mobile, and axe coverage.
 - Every command in `.factory/claims.json` — pass.
 
 ## Live verification
