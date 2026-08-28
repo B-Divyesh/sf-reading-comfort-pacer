@@ -1,0 +1,493 @@
+{
+  "base": "https://reading-comfort-pacer.sociobot.in",
+  "auditedAt": "2026-08-28T14:59:36.639Z",
+  "checks": [
+    {
+      "route": "/",
+      "colorScheme": "light",
+      "viewport": 390,
+      "status": 200,
+      "title": "Reading Comfort Pacer — breaks after stopping points",
+      "expectedTitle": "Reading Comfort Pacer — breaks after stopping points",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/",
+        "ogTitle": "Reading Comfort Pacer — breaks after stopping points",
+        "twitterTitle": "Reading Comfort Pacer — breaks after stopping points",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/demo/?demo=1",
+      "colorScheme": "light",
+      "viewport": 390,
+      "status": 200,
+      "title": "Demo — Reading Comfort Pacer",
+      "expectedTitle": "Demo — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/demo/",
+        "ogTitle": "Demo — Reading Comfort Pacer",
+        "twitterTitle": "Demo — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/privacy/",
+      "colorScheme": "light",
+      "viewport": 390,
+      "status": 200,
+      "title": "Privacy — Reading Comfort Pacer",
+      "expectedTitle": "Privacy — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/privacy/",
+        "ogTitle": "Privacy — Reading Comfort Pacer",
+        "twitterTitle": "Privacy — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/terms/",
+      "colorScheme": "light",
+      "viewport": 390,
+      "status": 200,
+      "title": "Terms — Reading Comfort Pacer",
+      "expectedTitle": "Terms — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/terms/",
+        "ogTitle": "Terms — Reading Comfort Pacer",
+        "twitterTitle": "Terms — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/not-a-real-route-polish4",
+      "colorScheme": "light",
+      "viewport": 390,
+      "status": 404,
+      "title": "Page not found — Reading Comfort Pacer",
+      "expectedTitle": "Page not found — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/404/",
+        "ogTitle": "Page not found — Reading Comfort Pacer",
+        "twitterTitle": "Page not found — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/",
+      "colorScheme": "light",
+      "viewport": 1440,
+      "status": 200,
+      "title": "Reading Comfort Pacer — breaks after stopping points",
+      "expectedTitle": "Reading Comfort Pacer — breaks after stopping points",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/",
+        "ogTitle": "Reading Comfort Pacer — breaks after stopping points",
+        "twitterTitle": "Reading Comfort Pacer — breaks after stopping points",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/demo/?demo=1",
+      "colorScheme": "light",
+      "viewport": 1440,
+      "status": 200,
+      "title": "Demo — Reading Comfort Pacer",
+      "expectedTitle": "Demo — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/demo/",
+        "ogTitle": "Demo — Reading Comfort Pacer",
+        "twitterTitle": "Demo — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/privacy/",
+      "colorScheme": "light",
+      "viewport": 1440,
+      "status": 200,
+      "title": "Privacy — Reading Comfort Pacer",
+      "expectedTitle": "Privacy — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/privacy/",
+        "ogTitle": "Privacy — Reading Comfort Pacer",
+        "twitterTitle": "Privacy — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/terms/",
+      "colorScheme": "light",
+      "viewport": 1440,
+      "status": 200,
+      "title": "Terms — Reading Comfort Pacer",
+      "expectedTitle": "Terms — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/terms/",
+        "ogTitle": "Terms — Reading Comfort Pacer",
+        "twitterTitle": "Terms — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/not-a-real-route-polish4",
+      "colorScheme": "light",
+      "viewport": 1440,
+      "status": 404,
+      "title": "Page not found — Reading Comfort Pacer",
+      "expectedTitle": "Page not found — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/404/",
+        "ogTitle": "Page not found — Reading Comfort Pacer",
+        "twitterTitle": "Page not found — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/",
+      "colorScheme": "dark",
+      "viewport": 390,
+      "status": 200,
+      "title": "Reading Comfort Pacer — breaks after stopping points",
+      "expectedTitle": "Reading Comfort Pacer — breaks after stopping points",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/",
+        "ogTitle": "Reading Comfort Pacer — breaks after stopping points",
+        "twitterTitle": "Reading Comfort Pacer — breaks after stopping points",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/demo/?demo=1",
+      "colorScheme": "dark",
+      "viewport": 390,
+      "status": 200,
+      "title": "Demo — Reading Comfort Pacer",
+      "expectedTitle": "Demo — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/demo/",
+        "ogTitle": "Demo — Reading Comfort Pacer",
+        "twitterTitle": "Demo — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/privacy/",
+      "colorScheme": "dark",
+      "viewport": 390,
+      "status": 200,
+      "title": "Privacy — Reading Comfort Pacer",
+      "expectedTitle": "Privacy — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/privacy/",
+        "ogTitle": "Privacy — Reading Comfort Pacer",
+        "twitterTitle": "Privacy — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/terms/",
+      "colorScheme": "dark",
+      "viewport": 390,
+      "status": 200,
+      "title": "Terms — Reading Comfort Pacer",
+      "expectedTitle": "Terms — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/terms/",
+        "ogTitle": "Terms — Reading Comfort Pacer",
+        "twitterTitle": "Terms — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/not-a-real-route-polish4",
+      "colorScheme": "dark",
+      "viewport": 390,
+      "status": 404,
+      "title": "Page not found — Reading Comfort Pacer",
+      "expectedTitle": "Page not found — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/404/",
+        "ogTitle": "Page not found — Reading Comfort Pacer",
+        "twitterTitle": "Page not found — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/",
+      "colorScheme": "dark",
+      "viewport": 1440,
+      "status": 200,
+      "title": "Reading Comfort Pacer — breaks after stopping points",
+      "expectedTitle": "Reading Comfort Pacer — breaks after stopping points",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/",
+        "ogTitle": "Reading Comfort Pacer — breaks after stopping points",
+        "twitterTitle": "Reading Comfort Pacer — breaks after stopping points",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/demo/?demo=1",
+      "colorScheme": "dark",
+      "viewport": 1440,
+      "status": 200,
+      "title": "Demo — Reading Comfort Pacer",
+      "expectedTitle": "Demo — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/demo/",
+        "ogTitle": "Demo — Reading Comfort Pacer",
+        "twitterTitle": "Demo — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/privacy/",
+      "colorScheme": "dark",
+      "viewport": 1440,
+      "status": 200,
+      "title": "Privacy — Reading Comfort Pacer",
+      "expectedTitle": "Privacy — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/privacy/",
+        "ogTitle": "Privacy — Reading Comfort Pacer",
+        "twitterTitle": "Privacy — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/terms/",
+      "colorScheme": "dark",
+      "viewport": 1440,
+      "status": 200,
+      "title": "Terms — Reading Comfort Pacer",
+      "expectedTitle": "Terms — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/terms/",
+        "ogTitle": "Terms — Reading Comfort Pacer",
+        "twitterTitle": "Terms — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    },
+    {
+      "route": "/not-a-real-route-polish4",
+      "colorScheme": "dark",
+      "viewport": 1440,
+      "status": 404,
+      "title": "Page not found — Reading Comfort Pacer",
+      "expectedTitle": "Page not found — Reading Comfort Pacer",
+      "metadata": {
+        "lang": "en",
+        "h1": 1,
+        "main": 1,
+        "canonical": "https://reading-comfort-pacer.sociobot.in/404/",
+        "ogTitle": "Page not found — Reading Comfort Pacer",
+        "twitterTitle": "Page not found — Reading Comfort Pacer",
+        "overflow": false
+      },
+      "foreignRequests": [],
+      "errors": [
+        "Failed to load resource: the server responded with a status of 404 ()"
+      ],
+      "undersizedTargets": [],
+      "applicationErrors": []
+    }
+  ],
+  "firstScreen": {
+    "positions": {
+      "h1": {
+        "x": 20,
+        "y": 156.140625,
+        "width": 300,
+        "height": 132.46875
+      },
+      ".lede": {
+        "x": 20,
+        "y": 312.609375,
+        "width": 350,
+        "height": 93
+      },
+      ".hero .button-primary": {
+        "x": 20,
+        "y": 441.609375,
+        "width": 241.40625,
+        "height": 52
+      },
+      ".plain-facts": {
+        "x": 20,
+        "y": 574.109375,
+        "width": 350,
+        "height": 60.6875
+      },
+      ".secondary-action": {
+        "x": 20,
+        "y": 652.796875,
+        "width": 350,
+        "height": 44
+      }
+    },
+    "viewportHeight": 844,
+    "facts": "Free\nNo account or page access\nWorks offline after install"
+  },
+  "demo": {
+    "banner": "Demo — sample data, nothing is saved",
+    "afterReset": {
+      "demo": "{\"phase\":\"ready\",\"seconds\":20}",
+      "real": "keep"
+    },
+    "afterExit": {
+      "demo": null,
+      "real": "keep"
+    }
+  },
+  "summary": {
+    "combinations": 20,
+    "failures": [],
+    "firstScreenFits": true,
+    "demoPasses": true,
+    "expected404ConsoleMessages": [
+      "Failed to load resource: the server responded with a status of 404 ()",
+      "Failed to load resource: the server responded with a status of 404 ()",
+      "Failed to load resource: the server responded with a status of 404 ()",
+      "Failed to load resource: the server responded with a status of 404 ()"
+    ]
+  }
+}

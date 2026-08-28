@@ -1,0 +1,14 @@
+{
+  "localSha": "e198fae1c58d4f4ec1c628fb68d2e71ea06802cbfd9cc18a134e177dc833d6fb",
+  "liveSha": "e198fae1c58d4f4ec1c628fb68d2e71ea06802cbfd9cc18a134e177dc833d6fb",
+  "equal": true,
+  "manifest": {
+    "name": "Reading Comfort Pacer",
+    "version": "1.0.0",
+    "manifest_version": 3,
+    "permissions": [
+      "storage",
+      "alarms"
+    ]
+  }
+}
