@@ -4,9 +4,10 @@ import "./styles.css";
 const heading = document.querySelector<HTMLElement>("h1");
 const announcement = document.querySelector<HTMLElement>(".route-announcement");
 const focusRoute = () => { if (heading) { heading.focus({ preventScroll: true }); if (announcement) announcement.textContent = `${document.title.replace(" — Reading Comfort Pacer", "")} page loaded`; } };
+const returningRoute = Boolean((history.state as { pacerRoute?: boolean } | null)?.pacerRoute);
 history.replaceState({ ...history.state, pacerRoute: true }, "", location.href);
-focusRoute();
-addEventListener("pageshow", () => focusRoute());
+if (returningRoute || (document.referrer && new URL(document.referrer).origin === location.origin)) focusRoute();
+addEventListener("pageshow", (event) => { if ((event as PageTransitionEvent).persisted) focusRoute(); });
 if (location.pathname === "/" && new URLSearchParams(location.search).get("demo") === "1") location.replace("/demo/?demo=1");
 document.querySelectorAll<HTMLAnchorElement>("[data-download]").forEach((link) => link.addEventListener("click", () => link.setAttribute("data-pressed", "true")));
 
